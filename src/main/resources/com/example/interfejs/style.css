@@ -1,0 +1,55 @@
+.root {
+     -fx-background-color: linear-gradient(to top, #9e5d49 0%, #4a1f12 100%);
+}
+
+.button{
+     -fx-border-color: transparent;
+     -fx-border-width: 0;
+     -fx-background-radius: 15;
+     -fx-background-color: transparent;
+     -fx-text-fill: white;
+}
+
+.button:focused {
+     -fx-border-color: transparent, black;
+     -fx-border-width: 1, 1;
+     -fx-border-radius: 0, 0;
+     -fx-border-insets: 1 1 1 1, 0;
+}
+
+.button:pressed {
+     -fx-background-color: transparent;
+     -fx-text-fill: white;
+}
+
+.button:hover{
+     -fx-background-color: #fff;
+     -fx-text-fill: black;
+}
+
+.label{
+     -fx-background-color: transparent;
+     -fx-text-fill: white;
+}
+
+.przyciski{
+     -fx-border-color: white;
+     -fx-border-width: 0;
+     -fx-background-radius: 15;
+     -fx-background-color: black;
+     -fx-text-fill: white;
+}
+
+.kolorregionlewo{
+     -fx-background-color: #4a1f12;
+}
+
+.kolorregiongora{
+     -fx-background-color: #4a1f12;
+}
+
+.kolorregiontytul{
+     -fx-background-color: #7a4332;
+
+}
+
