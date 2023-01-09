@@ -1,5 +1,7 @@
 package com.example.interfejs;
 
+import javafx.scene.control.TableView;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -40,16 +42,11 @@ public class DBAccess {
 
 
     public static void dodajWiolonczela(WiolonczelaHibernate wiolonczelaHibernate) {
-        try{
-            EntityManager entityManager = getEntityManager();
-            EntityTransaction transaction = entityManager.getTransaction();
-            transaction.begin();
-            entityManager.persist(wiolonczelaHibernate);
-            transaction.commit();
-        }catch(Exception e){
-            System.out.println(e.getMessage());
-        }
-
+        EntityManager entityManager = getEntityManager();
+        EntityTransaction transaction = entityManager.getTransaction();
+        transaction.begin();
+        entityManager.persist(wiolonczelaHibernate);
+        transaction.commit();
     }
 
     public static void dodajKontrabas(KontrabasHibernate kontrabasHibernate) {
@@ -59,4 +56,60 @@ public class DBAccess {
         entityManager.persist(kontrabasHibernate);
         transaction.commit();
     }
+
+    public static void removeSkrzypce(int index, TableView<SkrzypceHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        SkrzypceHibernate skrzypceHibernate = tableView.getItems().get(index);
+        tableView.getItems().remove(index);
+        entityManager.getTransaction().begin();
+        entityManager.remove(skrzypceHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+    public static void edytujSkrzypce(int index, TableView<SkrzypceHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        SkrzypceHibernate skrzypceHibernate = tableView.getItems().get(index);
+        tableView.getItems().remove(index);
+        entityManager.getTransaction().begin();
+        entityManager.remove(skrzypceHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+    public static void koszykSkrzypce(int index, TableView<SkrzypceHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        SkrzypceHibernate skrzypceHibernate = tableView.getItems().get(index);
+        tableView.getItems().remove(index);
+        entityManager.getTransaction().begin();
+        entityManager.remove(skrzypceHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+    public static void removeAltowka(int index, TableView<AltowkaHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        AltowkaHibernate altowkaHibernate = tableView.getItems().get(index);
+        tableView.getItems().remove(index);
+        entityManager.getTransaction().begin();
+        entityManager.remove(altowkaHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+    public static void edytujAltowka(int index, TableView<AltowkaHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        AltowkaHibernate altowkaHibernate = tableView.getItems().get(index);
+        tableView.getItems().remove(index);
+        entityManager.getTransaction().begin();
+        entityManager.remove(altowkaHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+    public static void koszykAltowka(int index, TableView<AltowkaHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        AltowkaHibernate altowkaHibernate = tableView.getItems().get(index);
+        tableView.getItems().remove(index);
+        entityManager.getTransaction().begin();
+        entityManager.remove(altowkaHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+
 }

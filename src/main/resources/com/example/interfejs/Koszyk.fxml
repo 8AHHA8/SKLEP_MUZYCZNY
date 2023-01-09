@@ -43,16 +43,11 @@
             <Font name="Copperplate Gothic Light" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="290.0" layoutY="636.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="117.0" stylesheets="@style.css" text="Zatwierdz" textFill="WHITE">
+      <Button fx:id="zatwierdzButton" layoutX="290.0" layoutY="624.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="117.0" stylesheets="@style.css" text="Zatwierdz" textFill="WHITE">
          <font>
             <Font name="Copperplate Gothic Light" size="15.0" />
          </font>
       </Button>
-      <Label layoutX="123.0" layoutY="598.0" prefHeight="25.0" prefWidth="117.0" text="Kwota w €" textFill="WHITE">
-         <font>
-            <Font name="Copperplate Gothic Light" size="20.0" />
-         </font>
-      </Label>
       <Button fx:id="PowrotKoszykButton" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="1004.0" mnemonicParsing="false" onAction="#PowrotKoszyk" prefHeight="37.0" prefWidth="47.0" stylesheets="@style.css" text="Button">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="60.0">
@@ -69,11 +64,15 @@
             <Image url="@Zdjecia/clipart1964106.png" />
          </image>
       </ImageView>
-      <TableView layoutX="112.0" layoutY="152.0" prefHeight="263.0" prefWidth="1298.0">
+      <TableView fx:id="tableview" layoutX="112.0" layoutY="152.0" prefHeight="270.0" prefWidth="1380.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="wlasnosc1Col" prefWidth="320.0" text="WLASNOSC1" />
+          <TableColumn fx:id="wlasnosc2Col" prefWidth="320.0" text="WLASNOSC2" />
+            <TableColumn fx:id="wlasnosc3Col" prefWidth="320.0" text="WLASNOSC3" />
+            <TableColumn fx:id="cenaCol" prefWidth="320.0" text="CENA" />
+            <TableColumn fx:id="idCol" prefWidth="100.0" text="ID" />
         </columns>
       </TableView>
+      <Button fx:id="aktualizujButton" layoutX="464.0" layoutY="626.0" mnemonicParsing="false" onAction="#aktualizujKoszyk" text="WYSWIETL" />
    </children>
 </AnchorPane>

@@ -35,14 +35,16 @@
       <Separator layoutX="940.0" layoutY="-116.0" orientation="VERTICAL" prefHeight="1244.0" prefWidth="0.0" />
       <Separator layoutX="1090.0" layoutY="-103.0" orientation="VERTICAL" prefHeight="1244.0" prefWidth="0.0" />
       <Separator layoutX="1240.0" layoutY="-111.0" orientation="VERTICAL" prefHeight="1244.0" prefWidth="0.0" />
-      <TableView fx:id="tableview" layoutX="641.0" layoutY="253.0" prefHeight="539.0" prefWidth="850.0">
+      <TableView fx:id="tableview" layoutX="483.0" layoutY="314.0" prefHeight="539.0" prefWidth="1052.0">
          <columns>
             <TableColumn fx:id="idCol" minWidth="15.0" prefWidth="150.0" text="ID" />
             <TableColumn fx:id="nazwaCol" minWidth="15.0" prefWidth="150.0" text="NAZWA" />
             <TableColumn fx:id="drewnoCol" minWidth="15.0" prefWidth="150.0" text="DREWNO" />
             <TableColumn fx:id="wagaCol" minWidth="15.0" prefWidth="150.0" text="WAGA" />
             <TableColumn fx:id="cenaCol" minWidth="15.0" prefWidth="150.0" text="CENA" />
-            <TableColumn fx:id="cenaCol1" minWidth="15.0" prefWidth="100.0" text="PRZYCISKI" />
+            <TableColumn fx:id="removeCol" minWidth="15.0" prefWidth="100.0" text="USUN" />
+            <TableColumn fx:id="editCol" minWidth="15.0" prefWidth="100.0" text="EDYTUJ" />
+            <TableColumn fx:id="editCol1" minWidth="15.0" prefWidth="100.0" text="DODAJ" />
          </columns>
       </TableView>
       <ImageView fitHeight="200.0" fitWidth="134.0" layoutX="-9.0" layoutY="70.0">

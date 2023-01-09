@@ -13,34 +13,15 @@ import java.io.IOException;
 import java.util.List;
 
 import static com.example.interfejs.DBAccess.getEntityManager;
-
+import static com.example.interfejs.DBAccess.removeSkrzypce;
+import static com.example.interfejs.DBAccess.koszykSkrzypce;
 
 
 public class addSkrzypceController {
 
-    @FXML
-    TextField nazwa;
-    @FXML
-    TextField drewno;
-    @FXML
-    TextField wiek;
-    @FXML
-    TextField cena;
 
-    @FXML
-    public Button PowrotSkrzypceButton;
     @FXML
     public Button wyswietlformularzskrzypceButton;
-
-
-    public void dodaj(ActionEvent actionEvent) {
-        DBAccess.dodajSkrzypce(new SkrzypceHibernate(nazwa.getText(), drewno.getText(), Integer.parseInt(wiek.getText()), Integer.parseInt(cena.getText()), null));
-    }
-
-    public void PowrotSkrzypce() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Skrzypce.fxml"));
-        PowrotSkrzypceButton.getScene().setRoot(root);
-    }
 
     @FXML
     private TableView<SkrzypceHibernate> tableview;
@@ -66,6 +47,11 @@ public class addSkrzypceController {
     private TableColumn<SkrzypceHibernate, Void> removeCol;
 
     @FXML
+    private TableColumn<SkrzypceHibernate, Void> edytujCol;
+    @FXML
+    private TableColumn<SkrzypceHibernate, Void> koszykCol;
+
+    @FXML
     private Button aktualizujButton;
 
     @FXML
@@ -80,7 +66,7 @@ public class addSkrzypceController {
     }
 
     @FXML
-    void wyswietlformularzskrzypce(ActionEvent event) throws IOException {
+    void wyswietlformularzskrzypce() throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("addSkrzypce.fxml"));
         wyswietlformularzskrzypceButton.getScene().setRoot(root);
     }
@@ -91,37 +77,67 @@ public class addSkrzypceController {
         String polecenie = "FROM SkrzypceHibernate";
         Query query = (Query) entityManager.createQuery(polecenie);
         List<SkrzypceHibernate> lista = query.list();
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCol.setCellValueFactory(new PropertyValueFactory<>("ID"));
         nazwaCol.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
         drewnoCol.setCellValueFactory(new PropertyValueFactory<>("drewno"));
         wiekCol.setCellValueFactory(new PropertyValueFactory<>("wiek"));
         cenaCol.setCellValueFactory(new PropertyValueFactory<>("cena"));
         tableview.setItems(FXCollections.observableList(lista));
 
+        nazwaCol.setEditable(true);
+        drewnoCol.setEditable(true);
+        wiekCol.setEditable(true);
+        cenaCol.setEditable(true);
+
+        tableview.setEditable(true);
+
     }
 
-    private EntityManager entityManager;
     @FXML
     private void initialize() {
+
         removeCol.setCellFactory(param -> {
             Button removeButton = new Button("USUŃ");
-
+            removeButton.setStyle("-fx-background-color: black");
             TableCell<SkrzypceHibernate, Void> cell = new TableCell<>();
             cell.setGraphic(removeButton);
 
-            removeButton.setOnAction(event -> removeSkrzypce(cell.getIndex()));
+            removeButton.setOnAction(event -> removeSkrzypce(cell.getIndex(), tableview));
 
             return cell;
         });
+
+        edytujCol.setCellFactory(param -> {
+            Button edytujButton = new Button("EDYTUJ");
+            edytujButton.setStyle("-fx-background-color: black");
+
+            TableCell<SkrzypceHibernate, Void> cell = new TableCell<>();
+            cell.setGraphic(edytujButton);
+
+            edytujButton.setOnAction(event -> removeSkrzypce(cell.getIndex(), tableview));
+
+            return cell;
+
+        });
+
+        koszykCol.setCellFactory(param -> {
+            Button koszykButton = new Button("KOSZYK");
+            koszykButton.setStyle("-fx-background-color: black");
+
+            TableCell<SkrzypceHibernate, Void> cell = new TableCell<>();
+            cell.setGraphic(koszykButton);
+
+            koszykButton.setOnAction(event -> removeSkrzypce(cell.getIndex(), tableview));
+
+            return cell;
+
+        });
+
+
+
     }
 
-    private void removeSkrzypce(int index) {
-        SkrzypceHibernate skrzypceHibernate = tableview.getItems().get(index);
-        tableview.getItems().remove(index);
-        entityManager.getTransaction().begin();
-        entityManager.remove(skrzypceHibernate);
-        entityManager.getTransaction().commit();
-    }
+
 
 
 }
