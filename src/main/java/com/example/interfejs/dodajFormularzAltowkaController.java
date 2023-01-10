@@ -14,11 +14,11 @@ public class dodajFormularzAltowkaController {
     public Button PowrotAltowkaButton;
 
     public void dodaj() {
-        DBAccess.dodajSkrzypce(new SkrzypceHibernate(nazwa.getText(), kolor.getText(), Integer.parseInt(wiek.getText()), Integer.parseInt(cena.getText()), null));
+        DBAccess.dodajAltowka(new AltowkaHibernate(nazwa.getText(), kolor.getText(), Integer.parseInt(wiek.getText()), Integer.parseInt(cena.getText()), null));
     }
 
     public void PowrotAltowka() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Altowka.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Altowki.fxml"));
         PowrotAltowkaButton.getScene().setRoot(root);
     }
 

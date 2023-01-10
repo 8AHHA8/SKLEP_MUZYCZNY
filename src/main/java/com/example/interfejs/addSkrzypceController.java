@@ -14,7 +14,7 @@ import java.util.List;
 
 import static com.example.interfejs.DBAccess.getEntityManager;
 import static com.example.interfejs.DBAccess.removeSkrzypce;
-import static com.example.interfejs.DBAccess.koszykSkrzypce;
+
 
 
 public class addSkrzypceController {

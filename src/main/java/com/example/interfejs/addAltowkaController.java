@@ -44,13 +44,13 @@ public class addAltowkaController {
     private TableColumn<AltowkaHibernate, Integer> cenaCol;
 
     @FXML
-    private TableColumn<SkrzypceHibernate, Void> removeCol;
+    private TableColumn<AltowkaHibernate, Void> removeCol;
 
     @FXML
-    private TableColumn<SkrzypceHibernate, Void> edytujCol;
+    private TableColumn<AltowkaHibernate, Void> edytujCol;
 
     @FXML
-    private TableColumn<SkrzypceHibernate, Void> koszykCol;
+    private TableColumn<AltowkaHibernate, Void> koszykCol;
 
     @FXML
     private Button aktualizujButton;
@@ -62,7 +62,7 @@ public class addAltowkaController {
     }
 
     @FXML
-    public void aktualizujAltowka(ActionEvent actionEvent) {
+    public void aktualizujAltowka() {
         zaladujTabele();
     }
 
@@ -78,7 +78,7 @@ public class addAltowkaController {
         String polecenie = "FROM AltowkaHibernate";
         Query query = (Query) entityManager.createQuery(polecenie);
         List<AltowkaHibernate> lista = query.list();
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCol.setCellValueFactory(new PropertyValueFactory<>("ID"));
         nazwaCol.setCellValueFactory(new PropertyValueFactory<>("nazwa"));
         kolorCol.setCellValueFactory(new PropertyValueFactory<>("kolor"));
         wiekCol.setCellValueFactory(new PropertyValueFactory<>("wiek"));
@@ -109,33 +109,31 @@ public class addAltowkaController {
             return cell;
         });
 
-        edytujCol.setCellFactory(param -> {
-            Button edytujButton = new Button("EDYTUJ");
-            edytujButton.setStyle("-fx-background-color: black");
-
-            TableCell<AltowkaHibernate, Void> cell = new TableCell<>();
-            cell.setGraphic(edytujButton);
-
-            edytujButton.setOnAction(event -> removeAltowka(cell.getIndex(), tableview));
-
-            return cell;
-
-        });
-
-        koszykCol.setCellFactory(param -> {
-            Button koszykButton = new Button("KOSZYK");
-            koszykButton.setStyle("-fx-background-color: black");
-
-            TableCell<AltowkaHibernate, Void> cell = new TableCell<>();
-            cell.setGraphic(koszykButton);
-
-            koszykButton.setOnAction(event -> removeAltowka(cell.getIndex(), tableview));
-
-            return cell;
-
-        });
-
-
+//        edytujCol.setCellFactory(param -> {
+//            Button edytujButton = new Button("EDYTUJ");
+//            edytujButton.setStyle("-fx-background-color: black");
+//
+//            TableCell<AltowkaHibernate, Void> cell = new TableCell<>();
+//            cell.setGraphic(edytujButton);
+//
+//            edytujButton.setOnAction(event -> removeAltowka(cell.getIndex(), tableview));
+//
+//            return cell;
+//
+//        });
+//
+//        koszykCol.setCellFactory(param -> {
+//            Button koszykButton = new Button("KOSZYK");
+//            koszykButton.setStyle("-fx-background-color: black");
+//
+//            TableCell<AltowkaHibernate, Void> cell = new TableCell<>();
+//            cell.setGraphic(koszykButton);
+//
+//            koszykButton.setOnAction(event -> removeAltowka(cell.getIndex(), tableview));
+//
+//            return cell;
+//
+//        });
 
     }
 
