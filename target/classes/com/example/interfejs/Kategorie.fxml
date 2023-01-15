@@ -3,6 +3,9 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleButton?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
@@ -11,35 +14,11 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" styleClass="kolorregiontytul" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.InstrumentyController">
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" styleClass="kolorregiontytul" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.InstrumentyController">
     <children>
       <Region layoutX="-14.0" layoutY="-13.0" prefHeight="132.0" prefWidth="200.0" stylesheets="@style.css" />
       <Region layoutX="185.0" layoutY="-43.0" prefHeight="162.0" prefWidth="1781.0" styleClass="kolorregiongora" stylesheets="@style.css" />
       <Region layoutX="-5.0" layoutY="118.0" prefHeight="977.0" prefWidth="191.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
-
-        <Button fx:id="SkrzypceButton" layoutX="1.0" layoutY="118.0" mnemonicParsing="false" onAction="#Skrzypce" prefHeight="60.0" prefWidth="185.0" styleClass="przyciski" stylesheets="@style.css" text="Skrzypce">
-            <font>
-                <Font name="Copperplate Gothic Light" size="20.0" />
-            </font>
-        </Button>
-        <!--        przejscie do podklasy skrzypce-->
-
-        <Button fx:id="AltowkaButton" layoutX="1.0" layoutY="178.0" mnemonicParsing="false" onAction="#Altówka" prefHeight="60.0" prefWidth="185.0" styleClass="przyciski" stylesheets="@style.css" text="Altówka">
-            <font>
-                <Font name="Copperplate Gothic Light" size="20.0" />
-            </font>
-        </Button>
-
-        <Button fx:id="WiolonczelaButton" layoutX="1.0" layoutY="238.0" mnemonicParsing="false" onAction="#Wiolonczela" prefHeight="60.0" prefWidth="185.0" styleClass="przyciski" stylesheets="@style.css" text="Wiolonczela">
-            <font>
-                <Font name="Copperplate Gothic Light" size="20.0" />
-            </font>
-        </Button>
-        <Button fx:id="KontrabasButton" layoutX="1.0" layoutY="298.0" mnemonicParsing="false" onAction="#Kontrabas" prefHeight="60.0" prefWidth="185.0" styleClass="przyciski" stylesheets="@style.css" text="Kontrabas">
-            <font>
-                <Font name="Copperplate Gothic Light" size="20.0" />
-            </font>
-        </Button>
 
         <Label contentDisplay="CENTER" layoutY="-2.0" prefHeight="120.0" prefWidth="185.0" text="  TAUBE">
             <font>
@@ -48,12 +27,8 @@
         </Label>
         <Separator layoutX="-56.0" layoutY="119.0" prefHeight="1.0" prefWidth="2032.0" />
         <Separator layoutX="183.0" layoutY="-27.0" orientation="VERTICAL" prefHeight="1244.0" prefWidth="0.0" />
-        <Separator layoutX="-15.0" layoutY="237.0" prefHeight="3.0" prefWidth="200.0" />
-        <Separator layoutX="-15.0" layoutY="177.0" prefHeight="3.0" prefWidth="200.0" />
-        <Separator layoutX="-15.0" layoutY="289.0" prefHeight="19.0" prefWidth="200.0" />
-        <Separator layoutX="-15.0" layoutY="357.0" prefHeight="3.0" prefWidth="200.0" />
 
-      <Button fx:id="KoszykButton" contentDisplay="GRAPHIC_ONLY" layoutX="1820.0" layoutY="18.0" mnemonicParsing="false" onAction="#Koszyk" prefHeight="80.0" prefWidth="76.0" text="Button">
+      <Button fx:id="KoszykButton" contentDisplay="GRAPHIC_ONLY" layoutX="1471.0" layoutY="18.0" mnemonicParsing="false" onAction="#Koszyk" prefHeight="80.0" prefWidth="76.0" text="Button">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="62.0">
                <image>
@@ -62,7 +37,7 @@
             </ImageView>
          </graphic></Button>
 
-      <Button fx:id="PracownikButton" contentDisplay="GRAPHIC_ONLY" layoutX="59.0" layoutY="967.0" mnemonicParsing="false" onAction="#Pracownik" prefHeight="80.0" prefWidth="76.0" text="Button">
+      <Button fx:id="PracownikButton" contentDisplay="GRAPHIC_ONLY" layoutX="54.0" layoutY="787.0" mnemonicParsing="false" onAction="#Pracownik" prefHeight="80.0" prefWidth="76.0" text="Button">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="62.0">
                <image>
@@ -80,12 +55,12 @@
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="30.0" layoutY="754.0" rotate="75.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="30.0" layoutY="470.0" rotate="75.0">
          <image>
             <Image url="@Zdjecia/szkicskrzypiec.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="-41.0" layoutY="762.0" rotate="75.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="-41.0" layoutY="470.0" rotate="75.0">
          <image>
             <Image url="@Zdjecia/odwroconeskrzypce.png" />
          </image>
@@ -106,7 +81,7 @@
          </image>
       </ImageView>
 
-      <ToggleButton fx:id="TloMuzyczneButton" contentDisplay="GRAPHIC_ONLY" layoutX="1826.0" layoutY="989.0" mnemonicParsing="false" onAction="#TloMuzyczne" prefHeight="50.0" prefWidth="50.0" text="Button">
+      <ToggleButton fx:id="TloMuzyczneButton" contentDisplay="GRAPHIC_ONLY" layoutX="1523.0" layoutY="805.0" mnemonicParsing="false" onAction="#TloMuzyczne" prefHeight="50.0" prefWidth="50.0" text="Button">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="50.0">
                <image>
@@ -125,42 +100,68 @@
             <Image url="@Zdjecia/violin-ga8a0cae95_1280.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="1335.0" layoutY="18.0">
-         <image>
-            <Image url="@Zdjecia/odwroconeskrzypce.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="1551.0" layoutY="18.0" rotate="10.0">
-         <image>
-            <Image url="@Zdjecia/violin-ga8a0cae95_1280.png" />
-         </image>
-      </ImageView>
-      <Button fx:id="StrojenieButton" layoutY="360.0" mnemonicParsing="false" onAction="#Strojenie" prefHeight="60.0" prefWidth="185.0" styleClass="przyciski" stylesheets="@style.css" text="Strojenie">
+      <Button fx:id="StrojenieButton" layoutY="122.0" mnemonicParsing="false" onAction="#Strojenie" prefHeight="60.0" prefWidth="185.0" styleClass="przyciski" stylesheets="@style.css" text="Strojenie">
          <font>
             <Font name="Copperplate Gothic Light" size="20.0" />
          </font>
       </Button>
-      <Separator layoutX="-14.0" layoutY="419.0" prefHeight="3.0" prefWidth="200.0" />
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="-41.0" layoutY="490.0" rotate="75.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="-41.0" layoutY="251.0" rotate="75.0">
          <image>
             <Image url="@Zdjecia/odwroconeskrzypce.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="30.0" layoutY="479.0" rotate="75.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="30.0" layoutY="251.0" rotate="75.0">
          <image>
             <Image url="@Zdjecia/szkicskrzypiec.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="12.0" layoutY="630.0">
+      <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="18.0" layoutY="365.0">
          <image>
             <Image url="@Zdjecia/violin-ga8a0cae95_1280.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="10.0" layoutY="898.0">
+      <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="18.0" layoutY="584.0">
          <image>
             <Image url="@Zdjecia/violin-ga8a0cae95_1280.png" />
          </image>
       </ImageView>
+        <TableView fx:id="tableview" layoutX="270.0" layoutY="229.0" prefHeight="600.0" prefWidth="1200.0">
+            <columns>
+                <TableColumn fx:id="id_instrumentuCol" minWidth="15.0" prefWidth="150.0" text="ID_INSTRUMENTU" />
+                <TableColumn fx:id="nazwaCol" minWidth="15.0" prefWidth="150.0" text="NAZWA" />
+                <TableColumn fx:id="drewnoCol" minWidth="15.0" prefWidth="150.0" text="DREWNO" />
+                <TableColumn fx:id="wiekCol" minWidth="15.0" prefWidth="150.0" text="WIEK" />
+                <TableColumn fx:id="cenaCol" minWidth="15.0" prefWidth="150.0" text="CENA" />
+                <TableColumn fx:id="typCol" minWidth="15.0" prefWidth="150.0" text="TYP" />
+                <TableColumn fx:id="removeCol" minWidth="15.0" prefWidth="100.0" text="USUN" />
+                <TableColumn fx:id="edytujCol" minWidth="15.0" prefWidth="100.0" text="EDYTUJ" />
+                <TableColumn fx:id="koszykCol" minWidth="15.0" prefWidth="100.0" text="KOSZYK" />
+            </columns>
+        </TableView>
+      <Button fx:id="wyswietlformularzinstrumentyButton" layoutX="719.0" layoutY="839.0" mnemonicParsing="false" onAction="#wyswietlformularzinstrumenty" prefHeight="40.0" prefWidth="300.0" text="DODAJ INSTRUMENT" />
+
+      <TextField fx:id="Search" layoutX="595.0" layoutY="179.0" prefHeight="25.0" prefWidth="561.0" />
+      <Label layoutX="777.0" layoutY="136.0" text="WYSZUKIWAWRKA">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="91.0" fitWidth="161.0" layoutX="18.0" layoutY="146.0">
+         <image>
+            <Image url="@Zdjecia/violin-ga8a0cae95_1280.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="91.0" fitWidth="185.0" layoutX="-2.0" layoutY="652.0" rotate="32.0">
+         <image>
+            <Image url="@Zdjecia/szkicskrzypiec.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="80.0" layoutX="1340.0" layoutY="31.0" rotate="90.0">
+         <image>
+            <Image url="@Zdjecia/szkicskrzypiec.png" />
+         </image>
+      </ImageView>
+
 
 
     </children>

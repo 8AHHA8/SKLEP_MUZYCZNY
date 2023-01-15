@@ -16,7 +16,7 @@ public class PowrotInstrumentyController {
     }
 
     public void wyswietlformularzskrzypce() throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("addSkrzypce.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("addInstrumenty.fxml"));
         PowrotInstrumentyButton.getScene().setRoot(root);
     }
 

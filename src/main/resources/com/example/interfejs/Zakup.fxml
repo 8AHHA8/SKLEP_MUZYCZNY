@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.ZakupController">
+   <children>
+      <TextField fx:id="imieText" layoutX="283.0" layoutY="618.0" prefHeight="25.0" prefWidth="615.0" />
+      <TextField fx:id="nr_telefonuText" layoutX="283.0" layoutY="702.0" prefHeight="25.0" prefWidth="615.0" />
+      <Label layoutX="34.0" layoutY="618.0" prefHeight="25.0" prefWidth="196.0" text="IMIE" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="661.0" prefHeight="25.0" prefWidth="218.0" text="NAZWISKO" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="702.0" prefHeight="25.0" prefWidth="218.0" text="NR_TELEFONU" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="zakupinstrumentuButton" layoutX="451.0" layoutY="757.0" mnemonicParsing="false" onAction="#zakupInstrumentu" text="ZATWIERDZ" />
+      <TextField fx:id="nazwiskoText" layoutX="283.0" layoutY="661.0" prefHeight="25.0" prefWidth="615.0" />
+      <Label layoutX="34.0" layoutY="562.0" prefHeight="25.0" prefWidth="196.0" text="CENA" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="34.0" layoutY="511.0" prefHeight="25.0" prefWidth="196.0" text="ID_INSTRUMENTU" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="id_instrumentuLabel" editable="false" layoutX="283.0" layoutY="511.0" prefHeight="25.0" prefWidth="615.0" />
+      <TextField fx:id="cenaLabel" editable="false" layoutX="283.0" layoutY="562.0" prefHeight="25.0" prefWidth="615.0" />
+   </children>
+</AnchorPane>

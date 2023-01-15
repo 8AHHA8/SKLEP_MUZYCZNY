@@ -2,53 +2,27 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.KoszykController">
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.KoszykController">
    <children>
-      <Region layoutX="-6.0" layoutY="926.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
-      <Region layoutX="-6.0" layoutY="901.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregiontytul" />
-      <Region layoutX="-6.0" layoutY="877.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
-      <Region layoutX="-6.0" layoutY="855.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregiontytul" stylesheets="@style.css" />
-      <Region layoutX="-6.0" layoutY="830.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
+      <Region layoutX="-3.0" layoutY="740.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
+      <Region layoutX="-3.0" layoutY="715.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregiontytul" />
+      <Region layoutX="-3.0" layoutY="691.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
+      <Region layoutX="-3.0" layoutY="669.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregiontytul" stylesheets="@style.css" />
+      <Region layoutX="-3.0" layoutY="644.0" prefHeight="25.0" prefWidth="1926.0" styleClass="kolorregionlewo" stylesheets="@style.css" />
       <Label layoutX="119.0" layoutY="70.0" prefHeight="50.0" prefWidth="315.0" text="Twój Koszyk" textFill="WHITE">
          <font>
             <Font name="Copperplate Gothic Light" size="45.0" />
          </font>
       </Label>
-      <TextField layoutX="274.0" layoutY="471.0" />
-      <PasswordField layoutX="274.0" layoutY="514.0" />
-      <TextField layoutX="274.0" layoutY="555.0" />
-      <Label layoutX="122.0" layoutY="471.0" prefHeight="25.0" prefWidth="99.0" text="e-mail" textFill="WHITE">
-         <font>
-            <Font name="Copperplate Gothic Light" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="123.0" layoutY="514.0" prefHeight="25.0" prefWidth="117.0" text="Hasło" textFill="WHITE">
-         <font>
-            <Font name="Copperplate Gothic Light" size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="123.0" layoutY="555.0" prefHeight="25.0" prefWidth="117.0" text="Nr Pesel" textFill="WHITE">
-         <font>
-            <Font name="Copperplate Gothic Light" size="20.0" />
-         </font>
-      </Label>
-      <Button fx:id="zatwierdzButton" layoutX="290.0" layoutY="624.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="117.0" stylesheets="@style.css" text="Zatwierdz" textFill="WHITE">
-         <font>
-            <Font name="Copperplate Gothic Light" size="15.0" />
-         </font>
-      </Button>
-      <Button fx:id="PowrotKoszykButton" contentDisplay="GRAPHIC_ONLY" layoutX="20.0" layoutY="1004.0" mnemonicParsing="false" onAction="#PowrotKoszyk" prefHeight="37.0" prefWidth="47.0" stylesheets="@style.css" text="Button">
+      <Button fx:id="PowrotKoszykButton" contentDisplay="GRAPHIC_ONLY" layoutX="23.0" layoutY="818.0" mnemonicParsing="false" onAction="#PowrotKoszyk" prefHeight="37.0" prefWidth="47.0" stylesheets="@style.css" text="Button">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="60.0">
                <image>
@@ -57,22 +31,20 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextArea layoutX="1593.0" layoutY="177.0" prefHeight="200.0" prefWidth="200.0" text="*REKLAMA*" />
-      <TextArea layoutX="1594.0" layoutY="497.0" prefHeight="200.0" prefWidth="200.0" text="*REKLAMA*" />
-      <ImageView fitHeight="213.0" fitWidth="86.0" layoutX="15.0" layoutY="777.0">
+      <ImageView fitHeight="213.0" fitWidth="86.0" layoutX="18.0" layoutY="591.0">
          <image>
             <Image url="@Zdjecia/clipart1964106.png" />
          </image>
       </ImageView>
-      <TableView fx:id="tableview" layoutX="112.0" layoutY="152.0" prefHeight="270.0" prefWidth="1380.0">
-        <columns>
-          <TableColumn fx:id="wlasnosc1Col" prefWidth="320.0" text="WLASNOSC1" />
-          <TableColumn fx:id="wlasnosc2Col" prefWidth="320.0" text="WLASNOSC2" />
-            <TableColumn fx:id="wlasnosc3Col" prefWidth="320.0" text="WLASNOSC3" />
-            <TableColumn fx:id="cenaCol" prefWidth="320.0" text="CENA" />
-            <TableColumn fx:id="idCol" prefWidth="100.0" text="ID" />
-        </columns>
+      <TableView fx:id="tableviewklient" layoutX="168.0" layoutY="147.0" prefHeight="246.0" prefWidth="1003.0">
+         <columns>
+            <TableColumn fx:id="id_klientaCol" prefWidth="150.0" text="ID_KLIENTA" />
+            <TableColumn fx:id="imieCol" prefWidth="150.0" text="IMIE" />
+            <TableColumn fx:id="nazwiskoCol" prefWidth="150.0" text="NAZWISKO" />
+            <TableColumn fx:id="numer_telefonuCol" prefWidth="150.0" text="NUMER TELEFONU" />
+            <TableColumn fx:id="id_instrumentuCol" prefWidth="194.0" text="ID_INSTRUMENTU" />
+            <TableColumn fx:id="cenaCol" prefWidth="209.0" text="CENA" />
+         </columns>
       </TableView>
-      <Button fx:id="aktualizujButton" layoutX="464.0" layoutY="626.0" mnemonicParsing="false" onAction="#aktualizujKoszyk" text="WYSWIETL" />
    </children>
 </AnchorPane>

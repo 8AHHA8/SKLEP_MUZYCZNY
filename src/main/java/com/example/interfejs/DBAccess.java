@@ -1,115 +1,107 @@
 package com.example.interfejs;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.scene.control.TableView;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class DBAccess {
-
     private static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("projekt");
-    private static EntityManager em = entityManagerFactory.createEntityManager();
-
-    public static EntityManagerFactory getEntityManagerFactory() {
-        return entityManagerFactory;
-    }
+    private static EntityManager em;
 
     public static EntityManager getEntityManager() {
+        if (em == null || !em.isOpen()) {
+            em = entityManagerFactory.createEntityManager();
+        }
         return em;
     }
-    public static void closeconn(){
+
+    public static void closeconn() {
         entityManagerFactory.close();
     }
 
-    public static void dodajSkrzypce(SkrzypceHibernate skrzypceHibernate){
+
+    public static void dodajInstrumenty(InstrumentyHibernate instrumentyHibernate) {
         EntityManager entityManager = getEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
-        entityManager.persist(skrzypceHibernate);
+        entityManager.persist(instrumentyHibernate);
         transaction.commit();
     }
 
-    public static void dodajAltowka(AltowkaHibernate altowkaHibernate) {
+    public static void removeInstrumenty(int index, TableView<InstrumentyHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        InstrumentyHibernate instrumentyHibernate = tableView.getItems().get(index);
+        ObservableList<InstrumentyHibernate> newList = FXCollections.observableArrayList(tableView.getItems());
+        newList.remove(index);
+        tableView.setItems(newList);
+        entityManager.getTransaction().begin();
+        InstrumentyHibernate attachedInstrumentyHibernate = entityManager.merge(instrumentyHibernate);
+        entityManager.remove(attachedInstrumentyHibernate);
+        entityManager.getTransaction().commit();
+    }
+
+    public static void edytujInstrumenty(int index, TableView<InstrumentyHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        InstrumentyHibernate instrumentyHibernate = tableView.getItems().get(index);
+        entityManager.getTransaction().begin();
+        entityManager.merge(instrumentyHibernate);
+        entityManager.getTransaction().commit();
+        tableView.refresh();
+    }
+
+    public static void koszykInstrumenty(int index, TableView<InstrumentyHibernate> tableView) {
+        EntityManager entityManager = getEntityManager();
+        InstrumentyHibernate instrumentyHibernate = tableView.getItems().get(index);
+        entityManager.getTransaction().begin();
+        entityManager.merge(instrumentyHibernate);
+        entityManager.getTransaction().commit();
+        tableView.refresh();
+    }
+
+    public static void dodajZakup(KlientHibernate klientHibernate) {
         EntityManager entityManager = getEntityManager();
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
-        entityManager.persist(altowkaHibernate);
+        entityManager.persist(klientHibernate);
         transaction.commit();
     }
 
-
-    public static void dodajWiolonczela(WiolonczelaHibernate wiolonczelaHibernate) {
-        EntityManager entityManager = getEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
-        entityManager.persist(wiolonczelaHibernate);
-        transaction.commit();
+    public InstrumentyHibernate getIdnstrument(int id_instrumentu) {
+        Query query = em.createQuery("from InstrumentyHibernate r where  r.ID_Instrumentu = ?1");
+        query.setParameter(1, id_instrumentu);
+        return (InstrumentyHibernate) query.getSingleResult();
     }
 
-    public static void dodajKontrabas(KontrabasHibernate kontrabasHibernate) {
-        EntityManager entityManager = getEntityManager();
-        EntityTransaction transaction = entityManager.getTransaction();
-        transaction.begin();
-        entityManager.persist(kontrabasHibernate);
-        transaction.commit();
+    public InstrumentyHibernate getCena(int cena) {
+        Query query = em.createQuery("from InstrumentyHibernate r where  r.Cena = ?1");
+        query.setParameter(1, cena);
+        return (InstrumentyHibernate) query.getSingleResult();
     }
 
-    public static void removeSkrzypce(int index, TableView<SkrzypceHibernate> tableView) {
+
+    public List<KlientHibernate> getKoszyk() {
+        em = entityManagerFactory.createEntityManager();
+        Query query = em.createQuery("from KlientHibernate");
+        return query.getResultList();
+    }
+
+    public List<KlientHibernate> usunKoszyk() {
+        List<KlientHibernate> deletedRecords = new ArrayList<>();
         EntityManager entityManager = getEntityManager();
-        SkrzypceHibernate skrzypceHibernate = tableView.getItems().get(index);
-        tableView.getItems().remove(index);
         entityManager.getTransaction().begin();
-        entityManager.remove(skrzypceHibernate);
+        TypedQuery<KlientHibernate> query = entityManager.createQuery("SELECT k FROM KlientHibernate k", KlientHibernate.class);
+        deletedRecords = query.getResultList();
+        entityManager.createQuery("DELETE FROM KlientHibernate").executeUpdate();
         entityManager.getTransaction().commit();
+        entityManager.close();
+        return deletedRecords;
     }
-
-    public static void edytujSkrzypce(int index, TableView<SkrzypceHibernate> tableView) {
-        EntityManager entityManager = getEntityManager();
-        SkrzypceHibernate skrzypceHibernate = tableView.getItems().get(index);
-        tableView.getItems().remove(index);
-        entityManager.getTransaction().begin();
-        entityManager.remove(skrzypceHibernate);
-        entityManager.getTransaction().commit();
-    }
-
-    public static void koszykSkrzypce(int index, TableView<SkrzypceHibernate> tableView) {
-        EntityManager entityManager = getEntityManager();
-        SkrzypceHibernate skrzypceHibernate = tableView.getItems().get(index);
-        tableView.getItems().remove(index);
-        entityManager.getTransaction().begin();
-        entityManager.remove(skrzypceHibernate);
-        entityManager.getTransaction().commit();
-    }
-
-    public static void removeAltowka(int index, TableView<AltowkaHibernate> tableView) {
-        EntityManager entityManager = getEntityManager();
-        AltowkaHibernate altowkaHibernate = tableView.getItems().get(index);
-        tableView.getItems().remove(index);
-        entityManager.getTransaction().begin();
-        entityManager.remove(altowkaHibernate);
-        entityManager.getTransaction().commit();
-    }
-
-    public static void edytujAltowka(int index, TableView<AltowkaHibernate> tableView) {
-        EntityManager entityManager = getEntityManager();
-        AltowkaHibernate altowkaHibernate = tableView.getItems().get(index);
-        tableView.getItems().remove(index);
-        entityManager.getTransaction().begin();
-        entityManager.remove(altowkaHibernate);
-        entityManager.getTransaction().commit();
-    }
-
-    public static void koszykAltowka(int index, TableView<AltowkaHibernate> tableView) {
-        EntityManager entityManager = getEntityManager();
-        AltowkaHibernate altowkaHibernate = tableView.getItems().get(index);
-        tableView.getItems().remove(index);
-        entityManager.getTransaction().begin();
-        entityManager.remove(altowkaHibernate);
-        entityManager.getTransaction().commit();
-    }
-
 
 }
+
+

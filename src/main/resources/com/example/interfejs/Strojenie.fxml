@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.StroikController">
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.StroikController">
    <children>
-      <Button fx:id="PowrotInstrumentyButton" contentDisplay="GRAPHIC_ONLY" layoutX="50.0" layoutY="984.0" mnemonicParsing="false" onAction="#PowrotInstrumenty" prefHeight="50.0" prefWidth="50.0" stylesheets="@style.css" text="Button">
+      <Button fx:id="PowrotInstrumentyButton" contentDisplay="GRAPHIC_ONLY" layoutX="37.0" layoutY="716.0" mnemonicParsing="false" onAction="#PowrotInstrumenty" prefHeight="50.0" prefWidth="50.0" stylesheets="@style.css" text="Button">
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="50.0">
                <image>
@@ -18,42 +18,42 @@
             </ImageView>
          </graphic>
       </Button>
-      <Button fx:id="AczteryButton" layoutX="250.0" layoutY="566.0" mnemonicParsing="false" onAction="#Acztery" text="A4">
+      <Button fx:id="AczteryButton" layoutX="190.0" layoutY="567.0" mnemonicParsing="false" onAction="#Acztery" text="A4">
          <font>
             <Font name="Copperplate Gothic Light" size="40.0" />
          </font>
       </Button>
-      <Button fx:id="GtrzyButton" layoutX="252.0" layoutY="394.0" mnemonicParsing="false" onAction="#Gtrzy" text="G3">
+      <Button fx:id="GtrzyButton" layoutX="192.0" layoutY="395.0" mnemonicParsing="false" onAction="#Gtrzy" text="G3">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="DczteryButton" layoutX="251.0" layoutY="480.0" mnemonicParsing="false" onAction="#Dcztery" text="D4">
+      <Button fx:id="DczteryButton" layoutX="191.0" layoutY="481.0" mnemonicParsing="false" onAction="#Dcztery" text="D4">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="EpiecButton" layoutX="246.0" layoutY="640.0" mnemonicParsing="false" onAction="#Epiec" prefHeight="86.0" prefWidth="113.0" text="E5">
+      <Button fx:id="EpiecButton" layoutX="186.0" layoutY="641.0" mnemonicParsing="false" onAction="#Epiec" prefHeight="86.0" prefWidth="113.0" text="E5">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="272.0" layoutY="500.0" rotate="90.0">
+      <ImageView fitHeight="100.0" fitWidth="200.0" layoutX="214.0" layoutY="498.0" rotate="90.0">
          <image>
             <Image url="@Zdjecia/szkicskrzypiec.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="116.0" fitWidth="220.0" layoutX="683.0" layoutY="482.0" rotate="90.0">
+      <ImageView fitHeight="116.0" fitWidth="220.0" layoutX="541.0" layoutY="480.0" rotate="90.0">
          <image>
             <Image url="@Zdjecia/szkicskrzypiec.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="188.0" fitWidth="305.0" layoutX="1095.0" layoutY="398.0" rotate="90.0">
+      <ImageView fitHeight="188.0" fitWidth="305.0" layoutX="875.0" layoutY="416.0" rotate="90.0">
          <image>
             <Image url="@Zdjecia/szkicskrzypiec.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="288.0" fitWidth="390.0" layoutX="1542.0" layoutY="306.0" rotate="90.0">
+      <ImageView fitHeight="288.0" fitWidth="390.0" layoutX="1247.0" layoutY="362.0" rotate="90.0">
          <image>
             <Image url="@Zdjecia/szkicskrzypiec.png" />
          </image>
@@ -113,17 +113,17 @@
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="342.0" layoutY="797.0">
+      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="394.0" layoutY="726.0">
          <image>
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="612.0" layoutY="797.0">
+      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="664.0" layoutY="726.0">
          <image>
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="882.0" layoutY="800.0">
+      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="934.0" layoutY="729.0">
          <image>
             <Image url="@Zdjecia/golablogo.png" />
          </image>
@@ -133,7 +133,7 @@
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="1157.0" layoutY="806.0">
+      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="1209.0" layoutY="735.0">
          <image>
             <Image url="@Zdjecia/golablogo.png" />
          </image>
@@ -143,7 +143,7 @@
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="81.0" layoutY="799.0">
+      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="133.0" layoutY="728.0">
          <image>
             <Image url="@Zdjecia/golablogo.png" />
          </image>
@@ -163,7 +163,7 @@
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="1456.0" layoutY="806.0">
+      <ImageView fitHeight="128.0" fitWidth="116.0" layoutX="1508.0" layoutY="735.0">
          <image>
             <Image url="@Zdjecia/golablogo.png" />
          </image>
@@ -183,142 +183,142 @@
             <Image url="@Zdjecia/golablogo.png" />
          </image>
       </ImageView>
-      <Label layoutX="50.0" layoutY="415.0" text="Pierwsza Struna">
+      <Label layoutX="50.0" layoutY="415.0" prefWidth="200.0" text="Pierwsza Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
       <Label layoutX="51.0" layoutY="492.0" text="Druga Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
       <Label layoutX="46.0" layoutY="580.0" text="Trzecia Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
       <Label layoutX="50.0" layoutY="660.0" text="Czwarta Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="433.0" layoutY="414.0" text="Pierwsza Struna">
+      <Label layoutX="359.0" layoutY="415.0" text="Pierwsza Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="438.0" layoutY="501.0" text="Druga Struna">
+      <Label layoutX="364.0" layoutY="502.0" text="Druga Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="433.0" layoutY="587.0" text="Trzecia Struna">
+      <Label layoutX="359.0" layoutY="588.0" text="Trzecia Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="433.0" layoutY="666.0" text="Czwarta Struna">
+      <Label layoutX="359.0" layoutY="667.0" text="Czwarta Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="GtrzyButton1" layoutX="654.0" layoutY="481.0" mnemonicParsing="false" onAction="#Gtrzy" text="G3">
+      <Button fx:id="GtrzyButton1" layoutX="501.0" layoutY="480.0" mnemonicParsing="false" onAction="#Gtrzy" text="G3">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Label layoutX="856.0" layoutY="414.0" text="Pierwsza Struna">
+      <Label layoutX="693.0" layoutY="416.0" text="Pierwsza Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="861.0" layoutY="501.0" text="Druga Struna">
+      <Label layoutX="698.0" layoutY="503.0" text="Druga Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="856.0" layoutY="587.0" text="Trzecia Struna">
+      <Label layoutX="693.0" layoutY="589.0" text="Trzecia Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="856.0" layoutY="666.0" text="Czwarta Struna">
+      <Label layoutX="693.0" layoutY="668.0" text="Czwarta Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="DtrzyButton" layoutX="1073.0" layoutY="567.0" mnemonicParsing="false" onAction="#Dtrzy" text="D3">
+      <Button fx:id="DtrzyButton" layoutX="824.0" layoutY="544.0" mnemonicParsing="false" onAction="#Dtrzy" text="D3">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="AtrzyButton" layoutX="1073.0" layoutY="653.0" mnemonicParsing="false" onAction="#Atrzy" text="A3">
+      <Button fx:id="AtrzyButton" layoutX="824.0" layoutY="630.0" mnemonicParsing="false" onAction="#Atrzy" text="A3">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Label layoutX="1325.0" layoutY="439.0" text="Pierwsza Struna">
+      <Label layoutX="1095.0" layoutY="411.0" text="Pierwsza Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="1330.0" layoutY="526.0" text="Druga Struna">
+      <Label layoutX="1100.0" layoutY="498.0" text="Druga Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="1325.0" layoutY="612.0" text="Trzecia Struna">
+      <Label layoutX="1095.0" layoutY="584.0" text="Trzecia Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="1325.0" layoutY="691.0" text="Czwarta Struna">
+      <Label layoutX="1095.0" layoutY="663.0" text="Czwarta Struna">
          <font>
-            <Font size="30.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Button fx:id="EjedenButton" layoutX="1534.0" layoutY="416.0" mnemonicParsing="false" onAction="#Ejeden" text="E1">
+      <Button fx:id="EjedenButton" layoutX="1240.0" layoutY="374.0" mnemonicParsing="false" onAction="#Ejeden" text="E1">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="AjedenButton" layoutX="1533.0" layoutY="501.0" mnemonicParsing="false" onAction="#Ajeden" text="A1">
+      <Button fx:id="AjedenButton" layoutX="1239.0" layoutY="459.0" mnemonicParsing="false" onAction="#Ajeden" text="A1">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="DdwaButton" layoutX="1533.0" layoutY="587.0" mnemonicParsing="false" onAction="#Ddwa" text="D2">
+      <Button fx:id="DdwaButton" layoutX="1239.0" layoutY="545.0" mnemonicParsing="false" onAction="#Ddwa" text="D2">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="GdwaButton" layoutX="1533.0" layoutY="673.0" mnemonicParsing="false" onAction="#Gdwa" text="G2">
+      <Button fx:id="GdwaButton" layoutX="1239.0" layoutY="631.0" mnemonicParsing="false" onAction="#Gdwa" text="G2">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="DczteryButton11" layoutX="654.0" layoutY="558.0" mnemonicParsing="false" onAction="#Dcztery" text="D4">
+      <Button fx:id="DczteryButton11" layoutX="501.0" layoutY="557.0" mnemonicParsing="false" onAction="#Dcztery" text="D4">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="CtrzyButton111" layoutX="651.0" layoutY="393.0" mnemonicParsing="false" onAction="#Ctrzy" text="C3">
+      <Button fx:id="CtrzyButton111" layoutX="498.0" layoutY="392.0" mnemonicParsing="false" onAction="#Ctrzy" text="C3">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="AczteryButton112" layoutX="656.0" layoutY="642.0" mnemonicParsing="false" onAction="#Acztery" text="A4">
+      <Button fx:id="AczteryButton112" layoutX="503.0" layoutY="641.0" mnemonicParsing="false" onAction="#Acztery" text="A4">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="CdwaButton1" layoutX="1073.0" layoutY="404.0" mnemonicParsing="false" onAction="#Cdwa" text="C2">
+      <Button fx:id="CdwaButton1" layoutX="824.0" layoutY="381.0" mnemonicParsing="false" onAction="#Cdwa" text="C2">
          <font>
             <Font size="40.0" />
          </font>
       </Button>
-      <Button fx:id="GdwaButton11" layoutX="1074.0" layoutY="488.0" mnemonicParsing="false" onAction="#Gdwa" text="G2">
+      <Button fx:id="GdwaButton11" layoutX="825.0" layoutY="465.0" mnemonicParsing="false" onAction="#Gdwa" text="G2">
          <font>
             <Font size="40.0" />
          </font>

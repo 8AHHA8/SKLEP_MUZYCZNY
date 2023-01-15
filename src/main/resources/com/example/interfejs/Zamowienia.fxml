@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="900.0" prefWidth="1600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.interfejs.ZamowieniaController">
+   <children>
+      <Button fx:id="PowrotZamowieniaButton" contentDisplay="GRAPHIC_ONLY" layoutX="163.0" layoutY="786.0" mnemonicParsing="false" onAction="#PowrotZamowienia" prefHeight="59.0" prefWidth="60.0" stylesheets="@style.css" text="Button">
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="60.0">
+               <image>
+                  <Image url="@Zdjecia/powrot.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Label layoutX="1039.0" layoutY="14.0" text="KASA">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="978.0" layoutY="117.0" text="Zamowienia">
+         <font>
+            <Font name="Copperplate Gothic Light" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="64.0" layoutY="347.0" text="Dane Pracownika">
+         <font>
+            <Font name="Copperplate Gothic Light" size="50.0" />
+         </font>
+      </Label>
+      <Button fx:id="ZatwierdzZakupButton" layoutX="772.0" layoutY="738.0" mnemonicParsing="false" onAction="#ZatwierdzZakup" prefHeight="30.0" prefWidth="160.0" stylesheets="@style.css" text="Zatwierdz Zakup">
+         <font>
+            <Font name="Copperplate Gothic Light" size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="199.0" layoutY="499.0" text="IMIE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="560.0" text="NAZWISKO">
+         <font>
+            <Font name="Copperplate Gothic Light" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="157.0" layoutY="622.0" prefHeight="34.0" prefWidth="109.0" text="E-MAIL">
+         <font>
+            <Font name="Copperplate Gothic Light" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="157.0" layoutY="683.0" prefHeight="34.0" prefWidth="109.0" text="PESEL">
+         <font>
+            <Font name="Copperplate Gothic Light" size="30.0" />
+         </font>
+      </Label>
+      <Label layoutX="291.0" layoutY="494.0" text="Dominik">
+         <font>
+            <Font name="Copperplate Gothic Light" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="284.0" layoutY="678.0" text="##580087312">
+         <font>
+            <Font name="Copperplate Gothic Light" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="617.0" text="domino@##.pl">
+         <font>
+            <Font name="Copperplate Gothic Light" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="284.0" layoutY="555.0" text="Jachas">
+         <font>
+            <Font name="Copperplate Gothic Light" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="736.0" prefHeight="34.0" prefWidth="238.0" text="ID Pracownika" textFill="WHITE">
+         <font>
+            <Font name="Copperplate Gothic Light" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="270.0" layoutY="421.0" orientation="VERTICAL" prefHeight="476.0" prefWidth="0.0" />
+      <Label layoutX="291.0" layoutY="731.0" text="AF7312024">
+         <font>
+            <Font name="Copperplate Gothic Light" size="40.0" />
+         </font>
+      </Label>
+      <ImageView cache="true" cacheHint="SCALE" fitHeight="101.0" fitWidth="90.0" layoutX="-1.0" mouseTransparent="true" pickOnBounds="true">
+         <image>
+            <Image url="@Zdjecia/spider-g407c642c3_1280.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="141.0" fitWidth="200.0" layoutX="300.0" layoutY="93.0" rotate="20.0">
+         <image>
+            <Image url="@Zdjecia/dove-gcd22363dd_1280-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="88.0" fitWidth="161.0" layoutX="1662.0" layoutY="916.0">
+         <image>
+            <Image url="@Zdjecia/nest-g062f1822e_1280-removebg-preview.png" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tableviewZamowienia" layoutX="614.0" layoutY="158.0" prefHeight="561.0" prefWidth="817.0">
+         <columns>
+            <TableColumn fx:id="idCol" prefWidth="156.0" text="ID" />
+            <TableColumn fx:id="dataCol" prefWidth="158.0" text="DATA_ZAMOWIENIA" />
+            <TableColumn fx:id="id_instrumentuCol" prefWidth="159.0" text="ID_INSTRUMENTU" />
+            <TableColumn fx:id="id_klientaCol" prefWidth="148.0" text="ID_KLIENTA" />
+            <TableColumn fx:id="cenaCol" prefWidth="195.0" text="CENA" />
+         </columns>
+      </TableView>
+      <Button fx:id="PobierzZamowieniaButton" layoutX="1105.0" layoutY="738.0" mnemonicParsing="false" onAction="#PobierzZamowienia" prefHeight="30.0" prefWidth="160.0" text="POBIERZ ZAMOWIENIA" />
+      <TextField fx:id="Kasa" editable="false" layoutX="918.0" layoutY="51.0" prefHeight="34.0" prefWidth="309.0" />
+      <Button fx:id="WyczyscKoszykButton" layoutX="982.0" layoutY="816.0" mnemonicParsing="false" onAction="#WyczyscKoszyk" text="WYCZYSC KOSZYK" />
+   </children>
+</AnchorPane>
